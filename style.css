@@ -6,40 +6,45 @@
    🎨 CUSTOMIZABLE DESIGN TOKENS (Easily tweak your theme colors here!)
    -------------------------------------------------------------------------- */
 :root {
-  /* Brand Theme Colors (Change these hex codes anytime!) */
-  --primary-color: #2563eb;       /* Royal Blue */
-  --primary-hover: #1d4ed8;       /* Deep Ocean Blue */
-  --primary-light: #eff6ff;       /* Very Soft Ice Blue */
+  /* --------------------------------------------------------------------------
+     🎨 WARM & COZY TRAVEL THEME (Warm Linen, Amber, Terracotta & Espresso)
+     -------------------------------------------------------------------------- */
   
-  --accent-color: #f97316;        /* Bright Sunset Orange */
-  --accent-hover: #ea580c;        /* Deep Coral */
-  --accent-light: #fff7ed;        /* Warm Peach Cream */
+  /* Primary Warm Accent: Sun-Drenched Terracotta / Clay */
+  --primary-color: #b85d38;       /* Warm Tuscan Terracotta */
+  --primary-hover: #9c4c2a;       /* Deep Ember Terracotta */
+  --primary-light: #faede6;       /* Soft Peach Silk */
 
-  /* Neutral Background & Surface Colors */
-  --bg-main: #f8fafc;             /* Clean Off-White Page Background */
-  --bg-surface: #ffffff;          /* White Card Surface */
-  --bg-subtle: #f1f5f9;           /* Light Gray Pill/Section Background */
+  /* Secondary Accent: Warm Honey Amber */
+  --accent-color: #d97706;        /* Warm Amber Gold */
+  --accent-hover: #b45309;        /* Roasted Honey */
+  --accent-light: #fef3c7;        /* Soft Honey Cream */
 
-  /* Typography Text Colors */
-  --text-dark: #0f172a;           /* Dark Slate Headline Color */
-  --text-body: #334155;           /* Charcoal Body Text */
-  --text-muted: #64748b;          /* Cool Gray Subtext */
-  --border-color: #e2e8f0;        /* Subtle Border Divider */
+  /* Neutral Background & Surface Colors (Warm Almond & Linen) */
+  --bg-main: #faf6f0;             /* Cozy Warm Linen Page Background */
+  --bg-surface: #ffffff;          /* Crisp Warm Card Surface */
+  --bg-subtle: #f3ece0;           /* Soft Sand Pill/Section Background */
+
+  /* Typography Text Colors (Deep Warm Espresso) */
+  --text-dark: #26201a;           /* Deep Espresso Slate */
+  --text-body: #453c35;           /* Warm Roasted Chestnut */
+  --text-muted: #786d63;          /* Soft Weathered Wood Gray */
+  --border-color: #e8ded1;        /* Warm Parchment Border Divider */
 
   /* Typography Fonts */
   --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-display: 'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif;
 
   /* Spacing & Radii */
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 22px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
-  --shadow-md: 0 6px 20px rgba(15, 23, 42, 0.08);
-  --shadow-lg: 0 16px 36px rgba(15, 23, 42, 0.12);
+  /* Cozy Warm Shadows */
+  --shadow-sm: 0 2px 6px rgba(69, 60, 53, 0.04);
+  --shadow-md: 0 8px 24px rgba(69, 60, 53, 0.08);
+  --shadow-lg: 0 18px 40px rgba(69, 60, 53, 0.12);
 
   --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -211,9 +216,10 @@ img {
    Hero Section
    -------------------------------------------------------------------------- */
 .hero {
-  padding: 5rem 0 3.5rem;
-  background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.08), transparent 45%),
-              radial-gradient(circle at bottom left, rgba(249, 115, 22, 0.06), transparent 45%);
+  padding: 5.5rem 0 4rem;
+  background: radial-gradient(circle at top right, rgba(184, 93, 56, 0.08), transparent 50%),
+              radial-gradient(circle at bottom left, rgba(217, 119, 6, 0.07), transparent 50%),
+              var(--bg-main);
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -430,7 +436,7 @@ img {
    Calculator Section
    -------------------------------------------------------------------------- */
 .calculator-section {
-  background-color: #f1f5f9;
+  background-color: var(--bg-subtle);
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
 }
@@ -576,13 +582,13 @@ input:focus, select:focus {
 }
 
 .total-cost-box {
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
   color: #ffffff;
   border-radius: var(--radius-md);
   padding: 1.8rem;
   text-align: center;
   margin-bottom: 1.8rem;
-  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 8px 24px rgba(184, 93, 56, 0.25);
 }
 
 .total-label {
