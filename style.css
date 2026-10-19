@@ -143,14 +143,19 @@ img {
 .brand-logo {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.65rem;
   font-size: 1.35rem;
   font-weight: 800;
   color: #26201a !important;
 }
 
-.logo-icon {
-  font-size: 1.5rem;
+.logo-svg {
+  flex-shrink: 0;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brand-logo:hover .logo-svg {
+  transform: rotate(45deg);
 }
 
 .logo-name strong {
