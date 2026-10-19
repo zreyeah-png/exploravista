@@ -97,5 +97,4 @@ exploravista/
 
 ---
 
-## 📄 License
-Created for academic demonstration and portfolio submission.
+
