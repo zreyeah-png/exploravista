@@ -1,10 +1,10 @@
-# ✈️ ExploraVista — Multi-City Travel Discovery & Trip Cost Estimator
+#  ExploraVista — Multi-City Travel Discovery & Trip Cost Estimator
 
 > A beginner-friendly, highly interactive travel website that allows travelers to explore 10 world-famous destinations, construct custom multi-city itineraries, and calculate accurate, realistic trip budget estimates based on departure country, duration, group size, and travel style.
 
 ---
 
-## 🌟 1. Project Overview & The Idea
+##  1. Project Overview & The Idea
 
 ### What is ExploraVista?
 **ExploraVista** is an interactive travel discovery and multi-destination budgeting platform designed to solve one of the biggest friction points for travelers: *"How much will this multi-city trip actually cost from my home city, and how should I plan the route?"*
@@ -19,7 +19,7 @@ Instead of generic travel blogs with static lists, ExploraVista combines **dynam
 
 ---
 
-## ✨ 2. Key Interactive Features
+##  2. Key Interactive Features
 
 1. **10 Global Destinations Showcase:**
    - Instant visual switching between 10 iconic countries: **Italy, Japan, Switzerland, Thailand, France, Spain, Greece, Dubai/UAE, Bali/Indonesia, and the United Kingdom**.
@@ -44,7 +44,7 @@ Instead of generic travel blogs with static lists, ExploraVista combines **dynam
 
 ---
 
-## 🛠️ 3. Technology Stack
+##  3. Technology Stack
 
 - **HTML5:** Semantic architecture (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`) with accessible form elements.
 - **CSS3:**
@@ -59,7 +59,7 @@ Instead of generic travel blogs with static lists, ExploraVista combines **dynam
 
 ---
 
-## 🚀 4. Setup & Local Preview Instructions
+##  4. Setup & Local Preview Instructions
 
 ### Prerequisites
 Any standard web browser (Chrome, Edge, Firefox, Safari).
@@ -76,7 +76,7 @@ Any standard web browser (Chrome, Edge, Firefox, Safari).
 
 ---
 
-## 🌐 5. Deployment (GitHub Pages)
+##  5. Deployment (GitHub Pages)
 
 This project is deployed live using **GitHub Pages**:
 - **Live Demo Link:** [https://zreyeah-png.github.io/exploravista/](https://zreyeah-png.github.io/exploravista/)
@@ -84,7 +84,7 @@ This project is deployed live using **GitHub Pages**:
 
 ---
 
-## 📁 6. Project Structure
+##  6. Project Structure
 
 ```
 exploravista/
