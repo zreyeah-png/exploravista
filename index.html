@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ExploraVista — Interactive Travel Discovery & Cost Estimator</title>
-  <meta name="description" content="Explore dream destinations, browse top iconic attractions, and calculate accurate trip budget estimates before you fly.">
+  <title>ExploraVista — Multi-City Travel Discovery & Trip Cost Estimator</title>
+  <meta name="description" content="Explore dream destinations, browse top iconic attractions, build multi-country itineraries, and calculate accurate trip budget estimates before you fly.">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cabinet+Grotesk:wght@700;800;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=warm4">
+  <link rel="stylesheet" href="style.css?v=multi5">
 </head>
 <body>
 
@@ -25,8 +25,9 @@
 
       <nav class="nav-links" id="navLinks">
         <a href="#destinations">Destinations</a>
+        <a href="#itinerarySection">My Itinerary (<span id="navItineraryCount">1</span>)</a>
         <a href="#calculator">Cost Estimator</a>
-        <a href="#tips">Travel Guide</a>
+        <a href="#tips">Travel Tips</a>
         <a href="#calculator" class="nav-cta-btn">Calculate My Trip</a>
       </nav>
 
@@ -42,21 +43,26 @@
     <!-- Hero Section -->
     <section class="hero" id="hero">
       <div class="container hero-container">
-        <div class="hero-badge">Smart Travel Discovery & Budgeting</div>
-        <h1 class="hero-title">Discover Dream Places. <br><span class="gradient-text">Know Your Exact Trip Cost.</span></h1>
+        <div class="hero-badge">Smart Multi-Destination Travel & Budgeting</div>
+        <h1 class="hero-title">Discover Dream Places. <br><span class="gradient-text">Plan Multi-City Trips With Real Costs.</span></h1>
         <p class="hero-subtitle">
-          Pick any destination across the globe, view iconic spots, and get instant, realistic budget estimates based on where you are flying from.
+          Explore world-famous sights, add multiple destinations to your custom itinerary, and calculate realistic budget estimates tailored to your departure city.
         </p>
 
         <!-- Quick Destination Pill Selector in Hero -->
         <div class="quick-destinations">
-          <span class="quick-label">Popular Destinations:</span>
+          <span class="quick-label">Browse 10 Global Destinations:</span>
           <div class="dest-pills" id="destPills">
             <button class="pill-btn active" data-dest="italy">Italy</button>
             <button class="pill-btn" data-dest="japan">Japan</button>
             <button class="pill-btn" data-dest="switzerland">Switzerland</button>
             <button class="pill-btn" data-dest="thailand">Thailand</button>
             <button class="pill-btn" data-dest="france">France</button>
+            <button class="pill-btn" data-dest="spain">Spain</button>
+            <button class="pill-btn" data-dest="greece">Greece</button>
+            <button class="pill-btn" data-dest="uae">Dubai / UAE</button>
+            <button class="pill-btn" data-dest="indonesia">Bali / Indonesia</button>
+            <button class="pill-btn" data-dest="uk">United Kingdom</button>
           </div>
         </div>
       </div>
@@ -65,12 +71,17 @@
     <!-- Destination Showcase Section -->
     <section class="section destination-section" id="destinations">
       <div class="container">
-        <div class="section-header">
-          <span class="tag">Explore The Highlights</span>
-          <h2 class="section-heading" id="destHeaderTitle">Exploring Italy</h2>
-          <p class="section-subtext" id="destHeaderSub">
-            From the romantic canals of Venice to the ancient Roman Colosseum and sunset cliffside villages.
-          </p>
+        <div class="dest-headline-row">
+          <div>
+            <span class="tag">Destination Guide</span>
+            <h2 class="section-heading" id="destHeaderTitle">Exploring Italy</h2>
+            <p class="section-subtext" id="destHeaderSub">
+              From the romantic canals of Venice to the ancient Roman Colosseum and cliffside coastal villages.
+            </p>
+          </div>
+          <button class="add-to-itinerary-btn" id="addCurrentDestBtn" onclick="toggleCurrentDestinationInItinerary()">
+            + Add to My Itinerary
+          </button>
         </div>
 
         <!-- Destination Quick Stats Bar -->
@@ -80,81 +91,99 @@
 
         <!-- Interactive Photo Gallery Grid -->
         <div class="photo-gallery-grid" id="photoGalleryGrid">
-          <!-- Injected dynamically via JavaScript based on selected country -->
+          <!-- Injected dynamically via JavaScript -->
         </div>
       </div>
     </section>
 
-    <!-- Trip Cost Estimator Section -->
+    <!-- Trip Cost Estimator & Multi-City Itinerary Section -->
     <section class="section calculator-section" id="calculator">
       <div class="container">
-        <div class="section-header">
-          <span class="tag">Interactive Budget Tool</span>
-          <h2 class="section-heading">Estimate Your Total Trip Cost</h2>
+        <div class="section-header" id="itinerarySection">
+          <span class="tag">Interactive Route & Budget Tool</span>
+          <h2 class="section-heading">Multi-Destination Trip Cost Estimator</h2>
           <p class="section-subtext">
-            Enter your starting point, duration, and travel style to see realistic cost estimates including flights, hotels, and daily expenses.
+            Add multiple stops to your trip. We calculate combined international flights, inter-city trains/transit, accommodations across all stops, and daily spending!
           </p>
+        </div>
+
+        <!-- Multi-City Itinerary Builder Ribbon -->
+        <div class="itinerary-builder-box">
+          <div class="itinerary-header">
+            <div>
+              <h3>Your Selected Itinerary (<span id="itineraryTotalStops">1</span> Destination)</h3>
+              <p>Click on any destination below to adjust days, or add more countries to your route:</p>
+            </div>
+            <div class="itinerary-add-dropdown-wrap">
+              <select id="quickAddDestDropdown" onchange="onDropdownAddDest()">
+                <option value="">+ Add Another Country...</option>
+                <!-- Populated dynamically via JS -->
+              </select>
+            </div>
+          </div>
+
+          <!-- Dynamic Itinerary Tags/Cards -->
+          <div class="itinerary-tags-container" id="itineraryTagsContainer">
+            <!-- Injected via JavaScript -->
+          </div>
         </div>
 
         <div class="calc-wrapper">
           <!-- Form Input Side -->
           <div class="calc-inputs-card">
             <h3>Trip Parameters</h3>
-            <p class="card-caption">Customize your travel details below:</p>
+            <p class="card-caption">Customize your flight origin and group details:</p>
 
             <form id="tripCalcForm" onsubmit="event.preventDefault(); calculateTripCost();">
               
               <!-- Starting Departure Location -->
               <div class="input-group">
-                <label for="departureOrigin">✈️ Flying Out From (Origin)</label>
+                <label for="departureOrigin">✈️ Flying Out From (Your Home City / Origin)</label>
                 <select id="departureOrigin" onchange="calculateTripCost()">
-                  <option value="India">India (Delhi / Mumbai / Bangalore)</option>
-                  <option value="USA">United States (New York / LA)</option>
-                  <option value="UK">United Kingdom (London)</option>
+                  <option value="India">India (Delhi / Mumbai / Bangalore / Chennai)</option>
+                  <option value="USA">United States (New York / LA / San Francisco)</option>
+                  <option value="UK">United Kingdom (London / Manchester)</option>
                   <option value="UAE">UAE (Dubai / Abu Dhabi)</option>
                   <option value="Singapore">Singapore</option>
                   <option value="Australia">Australia (Sydney / Melbourne)</option>
+                  <option value="Canada">Canada (Toronto / Vancouver)</option>
+                  <option value="Germany">Germany (Frankfurt / Berlin)</option>
                 </select>
               </div>
 
-              <!-- Destination Location -->
-              <div class="input-group">
-                <label for="calcDestination">📍 Destination Country</label>
-                <select id="calcDestination" onchange="onCalculatorDestChange()">
-                  <option value="italy">Italy</option>
-                  <option value="japan">Japan</option>
-                  <option value="switzerland">Switzerland</option>
-                  <option value="thailand">Thailand</option>
-                  <option value="france">France</option>
-                </select>
-              </div>
-
-              <!-- Duration & Travelers Row -->
+              <!-- Travelers Row -->
               <div class="form-row">
                 <div class="input-group">
-                  <label for="tripDays">📅 Trip Duration (Days)</label>
-                  <input type="number" id="tripDays" min="2" max="60" value="7" oninput="calculateTripCost()">
-                </div>
-                <div class="input-group">
-                  <label for="travelerCount">👥 Travelers</label>
+                  <label for="travelerCount">👥 Number of Travelers</label>
                   <select id="travelerCount" onchange="calculateTripCost()">
-                    <option value="1">1 Person (Solo)</option>
+                    <option value="1">1 Person (Solo Traveler)</option>
                     <option value="2" selected>2 People (Couple / Duo)</option>
                     <option value="3">3 People</option>
                     <option value="4">4 People (Family / Group)</option>
+                    <option value="5">5+ People</option>
+                  </select>
+                </div>
+                <div class="input-group">
+                  <label for="currencySelect">💱 Currency Display</label>
+                  <select id="currencySelect" onchange="calculateTripCost()">
+                    <option value="INR" selected>INR (₹) — Indian Rupee</option>
+                    <option value="USD">USD ($) — US Dollars</option>
+                    <option value="EUR">EUR (€) — Euro</option>
+                    <option value="GBP">GBP (£) — British Pound</option>
+                    <option value="AUD">AUD ($) — Australian Dollar</option>
                   </select>
                 </div>
               </div>
 
               <!-- Travel Style Preference -->
               <div class="input-group">
-                <label>🏨 Travel Style</label>
+                <label>🏨 Travel Style & Comfort Level</label>
                 <div class="style-selector">
                   <label class="style-option">
                     <input type="radio" name="travelStyle" value="budget" onchange="calculateTripCost()">
                     <span class="style-box">
                       <strong>Budget</strong>
-                      <small>Hostels & Street Food</small>
+                      <small>Hostels & Street Eats</small>
                     </span>
                   </label>
 
@@ -162,7 +191,7 @@
                     <input type="radio" name="travelStyle" value="moderate" checked onchange="calculateTripCost()">
                     <span class="style-box">
                       <strong>Comfort</strong>
-                      <small>3-Star Hotels & Cafes</small>
+                      <small>3-4★ Hotels & Cafes</small>
                     </span>
                   </label>
 
@@ -170,21 +199,10 @@
                     <input type="radio" name="travelStyle" value="luxury" onchange="calculateTripCost()">
                     <span class="style-box">
                       <strong>Luxury</strong>
-                      <small>5-Star Resorts & Fine Dining</small>
+                      <small>5★ Resorts & Fine Dining</small>
                     </span>
                   </label>
                 </div>
-              </div>
-
-              <!-- Currency Display Switcher -->
-              <div class="input-group">
-                <label for="currencySelect">💱 Currency Display</label>
-                <select id="currencySelect" onchange="calculateTripCost()">
-                  <option value="USD">USD ($) — US Dollars</option>
-                  <option value="INR" selected>INR (₹) — Indian Rupee</option>
-                  <option value="EUR">EUR (€) — Euro</option>
-                  <option value="GBP">GBP (£) — British Pound</option>
-                </select>
               </div>
             </form>
           </div>
@@ -192,9 +210,9 @@
           <!-- Dynamic Results Summary Card Side -->
           <div class="calc-results-card">
             <div class="results-header">
-              <span class="results-badge">Estimated Budget Breakdown</span>
+              <span class="results-badge">Multi-City Budget Estimate</span>
               <h4 id="summaryTripTitle">Trip to Italy (7 Days, 2 Travelers)</h4>
-              <p class="summary-subtitle">Based on real-world average flight & living index data</p>
+              <p class="summary-subtitle" id="summarySubCities">Covering 1 Destination across 7 total days</p>
             </div>
 
             <!-- Total Cost Big Highlight -->
@@ -210,19 +228,31 @@
                 <div class="item-title-col">
                   <span class="item-icon">✈️</span>
                   <div>
-                    <strong>Round-Trip Flights</strong>
-                    <small id="flightSubtext">For 2 travelers (Origin: India)</small>
+                    <strong>International Return Flights</strong>
+                    <small id="flightSubtext">Origin to destination(s)</small>
                   </div>
                 </div>
                 <span class="item-price" id="flightCostDisplay">₹96,000</span>
+              </div>
+
+              <!-- Inter-city transit item (appears when > 1 stop) -->
+              <div class="breakdown-item" id="interCityTransitItem" style="display: none;">
+                <div class="item-title-col">
+                  <span class="item-icon">🚆</span>
+                  <div>
+                    <strong>Inter-Country Transit (Flights/Trains)</strong>
+                    <small id="transitSubtext">Connecting between your chosen stops</small>
+                  </div>
+                </div>
+                <span class="item-price" id="transitCostDisplay">₹24,000</span>
               </div>
 
               <div class="breakdown-item">
                 <div class="item-title-col">
                   <span class="item-icon">🏨</span>
                   <div>
-                    <strong>Accommodations & Hotels</strong>
-                    <small id="hotelSubtext">7 nights (Comfort style)</small>
+                    <strong>Accommodations & Stays</strong>
+                    <small id="hotelSubtext">Across all destinations</small>
                   </div>
                 </div>
                 <span class="item-price" id="hotelCostDisplay">₹84,000</span>
@@ -233,7 +263,7 @@
                   <span class="item-icon">🍕</span>
                   <div>
                     <strong>Food & Local Dining</strong>
-                    <small id="foodSubtext">Meals, drinks, cafes</small>
+                    <small id="foodSubtext">Meals, drinks, street food</small>
                   </div>
                 </div>
                 <span class="item-price" id="foodCostDisplay">₹38,000</span>
@@ -243,8 +273,8 @@
                 <div class="item-title-col">
                   <span class="item-icon">🎟️</span>
                   <div>
-                    <strong>Activities & Sightseeing</strong>
-                    <small id="activitySubtext">Museums, local transit, tours</small>
+                    <strong>Activities, Sightseeing & Local Transit</strong>
+                    <small id="activitySubtext">Entry tickets, metro, experiences</small>
                   </div>
                 </div>
                 <span class="item-price" id="activityCostDisplay">₹22,000</span>
@@ -252,39 +282,39 @@
             </div>
 
             <div class="disclaimer-note">
-              💡 <em>Note:</em> Rates are estimated based on seasonal mid-tier booking averages. Actual prices fluctuate depending on booking dates and seasonality.
+              💡 <em>Smart Tip:</em> Estimates include typical international airline routes and seasonal accommodation averages. Adding adjacent countries (e.g. Italy + Switzerland) saves money by sharing one main international flight ticket!
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Travel Tips & Season Guide Section -->
+    <!-- Travel Tips Section -->
     <section class="section tips-section" id="tips">
       <div class="container">
         <div class="section-header">
           <span class="tag">Smart Travel Advice</span>
-          <h2 class="section-heading">How to Save on International Trips</h2>
-          <p class="section-subtext">Essential insider tips to stretch your travel budget further without sacrificing comfort.</p>
+          <h2 class="section-heading">How to Save on Multi-Country Trips</h2>
+          <p class="section-subtext">Insider advice for stitching together multi-city itineraries without blowing your budget.</p>
         </div>
 
         <div class="tips-grid">
           <div class="tip-card">
-            <div class="tip-icon">🗓️</div>
-            <h3>Travel in Shoulder Seasons</h3>
-            <p>Visit Europe in April–May or Sept–Oct instead of July. Flights and hotels are up to 40% cheaper, and popular landmarks have half the crowds.</p>
+            <div class="tip-icon">🗺️</div>
+            <h3>Use Open-Jaw "Multi-City" Flights</h3>
+            <p>Instead of booking round-trip to Rome and back, book an "open-jaw" flight flying into Rome and flying out of Zurich. This saves hundreds in backtracking transport!</p>
           </div>
 
           <div class="tip-card">
             <div class="tip-icon">🚆</div>
-            <h3>Use Regional Rail Passes</h3>
-            <p>In countries like Italy (Trenitalia) and Japan (JR Pass / regional IC cards), high-speed rail passes save hundreds over individual single tickets.</p>
+            <h3>Cross Borders by High-Speed Rail</h3>
+            <p>In Europe (Eurostar / TGV / Frecciarossa) and Japan (Shinkansen), high-speed rail is faster than flying airport-to-airport and drops you right in city centers.</p>
           </div>
 
           <div class="tip-card">
             <div class="tip-icon">💳</div>
-            <h3>Zero Forex Markup Cards</h3>
-            <p>Never exchange currency at airports. Use a travel card with 0% foreign exchange fees to save 3.5% to 5% on every transaction.</p>
+            <h3>Combine High & Low-Cost Destinations</h3>
+            <p>Pair an expensive country (like Switzerland) with a more budget-friendly neighbor (like Italy or Spain) to balance your overall average daily trip budget.</p>
           </div>
         </div>
       </div>
@@ -299,12 +329,12 @@
           <span class="logo-icon">✈️</span>
           <span class="logo-name">Explora<strong>Vista</strong></span>
         </div>
-        <p>Your interactive travel companion for smart discovery and effortless budget planning.</p>
+        <p>Your interactive travel companion for exploring iconic global sights and planning multi-city budgets with ease.</p>
       </div>
 
       <div class="footer-links-group">
         <div class="footer-col">
-          <strong>Destinations</strong>
+          <strong>Top Destinations</strong>
           <a href="#destinations" onclick="switchDestination('italy')">Italy</a>
           <a href="#destinations" onclick="switchDestination('japan')">Japan</a>
           <a href="#destinations" onclick="switchDestination('switzerland')">Switzerland</a>
@@ -312,18 +342,20 @@
           <a href="#destinations" onclick="switchDestination('france')">France</a>
         </div>
         <div class="footer-col">
-          <strong>Tools</strong>
-          <a href="#calculator">Trip Cost Calculator</a>
-          <a href="#tips">Budget Travel Tips</a>
-          <a href="#hero">Popular Sights</a>
+          <strong>More Countries</strong>
+          <a href="#destinations" onclick="switchDestination('spain')">Spain</a>
+          <a href="#destinations" onclick="switchDestination('greece')">Greece</a>
+          <a href="#destinations" onclick="switchDestination('uae')">Dubai / UAE</a>
+          <a href="#destinations" onclick="switchDestination('indonesia')">Bali / Indonesia</a>
+          <a href="#destinations" onclick="switchDestination('uk')">United Kingdom</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 ExploraVista Travel Project. Built with clean HTML, CSS & JavaScript.</p>
+      <p>© 2026 ExploraVista Multi-City Travel Project. Built with clean HTML, CSS & JavaScript.</p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=multi5"></script>
 </body>
 </html>
