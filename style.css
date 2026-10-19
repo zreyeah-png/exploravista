@@ -1,57 +1,41 @@
 /* ==========================================================================
-   RoamReady — Travel Discovery & Cost Estimator Stylesheet
+   ExploraVista — Warm & Cozy Travel Discovery & Cost Estimator
    ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   🎨 CUSTOMIZABLE DESIGN TOKENS (Easily tweak your theme colors here!)
-   -------------------------------------------------------------------------- */
+/* 1. Design Tokens: Warm & Cozy Palette */
 :root {
-  /* --------------------------------------------------------------------------
-     🎨 WARM & COZY TRAVEL THEME (Warm Linen, Amber, Terracotta & Espresso)
-     -------------------------------------------------------------------------- */
-  
-  /* Primary Warm Accent: Sun-Drenched Terracotta / Clay */
   --primary-color: #b85d38;       /* Warm Tuscan Terracotta */
   --primary-hover: #9c4c2a;       /* Deep Ember Terracotta */
   --primary-light: #faede6;       /* Soft Peach Silk */
 
-  /* Secondary Accent: Warm Honey Amber */
   --accent-color: #d97706;        /* Warm Amber Gold */
   --accent-hover: #b45309;        /* Roasted Honey */
   --accent-light: #fef3c7;        /* Soft Honey Cream */
 
-  /* Neutral Background & Surface Colors (Warm Almond & Linen) */
   --bg-main: #faf6f0;             /* Cozy Warm Linen Page Background */
   --bg-surface: #ffffff;          /* Crisp Warm Card Surface */
-  --bg-subtle: #f3ece0;           /* Soft Sand Pill/Section Background */
+  --bg-subtle: #f3ece0;           /* Soft Sand Background */
 
-  /* Typography Text Colors (Deep Warm Espresso) */
   --text-dark: #26201a;           /* Deep Espresso Slate */
   --text-body: #453c35;           /* Warm Roasted Chestnut */
   --text-muted: #786d63;          /* Soft Weathered Wood Gray */
-  --border-color: #e8ded1;        /* Warm Parchment Border Divider */
+  --border-color: #e8ded1;        /* Warm Parchment Border */
 
-  /* Typography Fonts */
   --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-display: 'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif;
 
-  /* Spacing & Radii */
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 24px;
   --radius-full: 9999px;
 
-  /* Cozy Warm Shadows */
-  --shadow-sm: 0 2px 6px rgba(69, 60, 53, 0.04);
-  --shadow-md: 0 8px 24px rgba(69, 60, 53, 0.08);
-  --shadow-lg: 0 18px 40px rgba(69, 60, 53, 0.12);
+  --shadow-sm: 0 2px 6px rgba(69, 60, 53, 0.05);
+  --shadow-md: 0 8px 24px rgba(69, 60, 53, 0.09);
+  --shadow-lg: 0 18px 40px rgba(69, 60, 53, 0.13);
 
   --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* --------------------------------------------------------------------------
-   Global Reset & Base Setup
-   -------------------------------------------------------------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -65,8 +49,8 @@ html {
 
 body {
   font-family: var(--font-family);
-  background-color: var(--bg-main);
-  color: var(--text-body);
+  background-color: #faf6f0 !important;
+  color: #453c35 !important;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -101,8 +85,8 @@ img {
 
 .tag {
   display: inline-block;
-  background-color: var(--primary-light);
-  color: var(--primary-color);
+  background-color: #faede6 !important;
+  color: #b85d38 !important;
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -110,31 +94,30 @@ img {
   padding: 0.35rem 0.9rem;
   border-radius: var(--radius-full);
   margin-bottom: 0.8rem;
+  border: 1px solid #e8ded1;
 }
 
 .section-heading {
   font-size: 2.3rem;
   font-weight: 800;
-  color: var(--text-dark);
+  color: #26201a !important;
   margin-bottom: 0.8rem;
   letter-spacing: -0.02em;
 }
 
 .section-subtext {
   font-size: 1.05rem;
-  color: var(--text-muted);
+  color: #786d63 !important;
 }
 
-/* --------------------------------------------------------------------------
-   Navigation Bar
-   -------------------------------------------------------------------------- */
+/* 2. Navigation Bar */
 .navbar {
   position: sticky;
   top: 0;
-  background-color: rgba(255, 255, 255, 0.94);
+  background-color: rgba(250, 246, 240, 0.95) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid #e8ded1 !important;
   z-index: 1000;
 }
 
@@ -153,7 +136,7 @@ img {
   gap: 0.6rem;
   font-size: 1.35rem;
   font-weight: 800;
-  color: var(--text-dark);
+  color: #26201a !important;
 }
 
 .logo-icon {
@@ -161,7 +144,7 @@ img {
 }
 
 .logo-name strong {
-  color: var(--primary-color);
+  color: #b85d38 !important;
 }
 
 .nav-links {
@@ -173,24 +156,24 @@ img {
 .nav-links a {
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--text-body);
+  color: #453c35 !important;
 }
 
 .nav-links a:hover {
-  color: var(--primary-color);
+  color: #b85d38 !important;
 }
 
 .nav-cta-btn {
-  background-color: var(--primary-color);
+  background-color: #b85d38 !important;
   color: #ffffff !important;
   padding: 0.6rem 1.3rem;
   border-radius: var(--radius-full);
   font-weight: 700 !important;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 4px 14px rgba(184, 93, 56, 0.25) !important;
 }
 
 .nav-cta-btn:hover {
-  background-color: var(--primary-hover);
+  background-color: #9c4c2a !important;
   transform: translateY(-1px);
 }
 
@@ -207,20 +190,18 @@ img {
 .mobile-toggle span {
   width: 24px;
   height: 2px;
-  background-color: var(--text-dark);
+  background-color: #26201a;
   border-radius: 2px;
   transition: var(--transition);
 }
 
-/* --------------------------------------------------------------------------
-   Hero Section
-   -------------------------------------------------------------------------- */
+/* 3. Hero Section */
 .hero {
   padding: 5.5rem 0 4rem;
-  background: radial-gradient(circle at top right, rgba(184, 93, 56, 0.08), transparent 50%),
-              radial-gradient(circle at bottom left, rgba(217, 119, 6, 0.07), transparent 50%),
-              var(--bg-main);
-  border-bottom: 1px solid var(--border-color);
+  background: radial-gradient(circle at top right, rgba(184, 93, 56, 0.10), transparent 50%),
+              radial-gradient(circle at bottom left, rgba(217, 119, 6, 0.09), transparent 50%),
+              #faf6f0 !important;
+  border-bottom: 1px solid #e8ded1 !important;
 }
 
 .hero-container {
@@ -231,8 +212,8 @@ img {
 .hero-badge {
   display: inline-block;
   background-color: #ffffff;
-  color: var(--primary-color);
-  border: 1px solid var(--border-color);
+  color: #b85d38 !important;
+  border: 1px solid #e8ded1 !important;
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -245,21 +226,21 @@ img {
 .hero-title {
   font-size: 3.5rem;
   font-weight: 900;
-  color: var(--text-dark);
+  color: #26201a !important;
   line-height: 1.15;
   margin-bottom: 1.2rem;
   letter-spacing: -0.03em;
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: linear-gradient(135deg, #b85d38, #d97706) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
 .hero-subtitle {
   font-size: 1.18rem;
-  color: var(--text-muted);
+  color: #786d63 !important;
   max-width: 640px;
   margin: 0 auto 2.5rem;
 }
@@ -275,7 +256,7 @@ img {
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: #786d63 !important;
   letter-spacing: 0.06em;
 }
 
@@ -287,9 +268,9 @@ img {
 }
 
 .pill-btn {
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-color);
-  color: var(--text-body);
+  background-color: #ffffff !important;
+  border: 1px solid #e8ded1 !important;
+  color: #453c35 !important;
   font-family: var(--font-family);
   font-size: 0.95rem;
   font-weight: 700;
@@ -301,27 +282,25 @@ img {
 }
 
 .pill-btn:hover {
-  border-color: var(--primary-color);
-  color: var(--primary-color);
+  border-color: #b85d38 !important;
+  color: #b85d38 !important;
   transform: translateY(-2px);
 }
 
 .pill-btn.active {
-  background-color: var(--primary-color);
-  color: #ffffff;
-  border-color: var(--primary-color);
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+  background-color: #b85d38 !important;
+  color: #ffffff !important;
+  border-color: #b85d38 !important;
+  box-shadow: 0 4px 14px rgba(184, 93, 56, 0.3) !important;
 }
 
-/* --------------------------------------------------------------------------
-   Destination Highlights & Photo Gallery Grid
-   -------------------------------------------------------------------------- */
+/* 4. Destination Highlights & Photo Gallery */
 .dest-stats-bar {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-color);
+  background-color: #ffffff !important;
+  border: 1px solid #e8ded1 !important;
   border-radius: var(--radius-md);
   padding: 1.2rem 2rem;
   margin-bottom: 2.5rem;
@@ -337,7 +316,7 @@ img {
 }
 
 .dest-stat-item strong {
-  color: var(--text-dark);
+  color: #26201a !important;
 }
 
 .photo-gallery-grid {
@@ -347,8 +326,8 @@ img {
 }
 
 .gallery-card {
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-color);
+  background-color: #ffffff !important;
+  border: 1px solid #e8ded1 !important;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
@@ -367,7 +346,7 @@ img {
   width: 100%;
   height: 240px;
   overflow: hidden;
-  background-color: #e2e8f0;
+  background-color: #f3ece0;
 }
 
 .gallery-card-img-wrap img {
@@ -385,7 +364,7 @@ img {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: rgba(15, 23, 42, 0.75);
+  background: rgba(38, 32, 26, 0.78);
   color: #ffffff;
   backdrop-filter: blur(6px);
   font-size: 0.75rem;
@@ -406,13 +385,13 @@ img {
 .gallery-card-body h3 {
   font-size: 1.25rem;
   font-weight: 800;
-  color: var(--text-dark);
+  color: #26201a !important;
   margin-bottom: 0.4rem;
 }
 
 .gallery-card-body p {
   font-size: 0.92rem;
-  color: var(--text-muted);
+  color: #786d63 !important;
   line-height: 1.5;
   margin-bottom: 1.2rem;
   flex-grow: 1;
@@ -422,23 +401,21 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid #e8ded1;
   padding-top: 0.9rem;
   font-size: 0.85rem;
-  color: var(--text-dark);
+  color: #26201a !important;
 }
 
 .gallery-card-footer strong {
-  color: var(--primary-color);
+  color: #b85d38 !important;
 }
 
-/* --------------------------------------------------------------------------
-   Calculator Section
-   -------------------------------------------------------------------------- */
+/* 5. Calculator Section */
 .calculator-section {
-  background-color: var(--bg-subtle);
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  background-color: #f3ece0 !important;
+  border-top: 1px solid #e8ded1 !important;
+  border-bottom: 1px solid #e8ded1 !important;
 }
 
 .calc-wrapper {
@@ -449,8 +426,8 @@ img {
 }
 
 .calc-inputs-card, .calc-results-card {
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-color);
+  background-color: #ffffff !important;
+  border: 1px solid #e8ded1 !important;
   border-radius: var(--radius-lg);
   padding: 2.5rem;
   box-shadow: var(--shadow-md);
@@ -459,13 +436,13 @@ img {
 .calc-inputs-card h3 {
   font-size: 1.45rem;
   font-weight: 800;
-  color: var(--text-dark);
+  color: #26201a !important;
   margin-bottom: 0.3rem;
 }
 
 .card-caption {
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: #786d63 !important;
   margin-bottom: 1.8rem;
 }
 
@@ -483,7 +460,7 @@ label {
   display: block;
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--text-dark);
+  color: #26201a !important;
   margin-bottom: 0.45rem;
 }
 
@@ -492,18 +469,18 @@ input, select {
   padding: 0.8rem 1rem;
   font-family: var(--font-family);
   font-size: 0.95rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid #e8ded1 !important;
   border-radius: var(--radius-sm);
-  background-color: var(--bg-main);
-  color: var(--text-dark);
+  background-color: #faf6f0 !important;
+  color: #26201a !important;
   transition: var(--transition);
 }
 
 input:focus, select:focus {
   outline: none;
-  border-color: var(--primary-color);
-  background-color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  border-color: #b85d38 !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(184, 93, 56, 0.15) !important;
 }
 
 .style-selector {
@@ -519,46 +496,46 @@ input:focus, select:focus {
 .style-box {
   display: block;
   padding: 0.8rem 0.5rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid #e8ded1 !important;
   border-radius: var(--radius-sm);
   text-align: center;
   cursor: pointer;
-  background-color: var(--bg-main);
+  background-color: #faf6f0 !important;
   transition: var(--transition);
 }
 
 .style-box strong {
   display: block;
   font-size: 0.9rem;
-  color: var(--text-dark);
+  color: #26201a !important;
 }
 
 .style-box small {
   display: block;
   font-size: 0.72rem;
-  color: var(--text-muted);
+  color: #786d63 !important;
   margin-top: 0.2rem;
 }
 
 .style-option input:checked + .style-box {
-  background-color: var(--primary-light);
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 2px var(--primary-color);
+  background-color: #faede6 !important;
+  border-color: #b85d38 !important;
+  box-shadow: 0 0 0 2px #b85d38 !important;
 }
 
 .style-option input:checked + .style-box strong {
-  color: var(--primary-color);
+  color: #b85d38 !important;
 }
 
 /* Results Card Styling */
 .calc-results-card {
-  background: linear-gradient(to bottom, #ffffff, var(--bg-main));
+  background: linear-gradient(to bottom, #ffffff, #faf6f0) !important;
 }
 
 .results-badge {
   display: inline-block;
-  background-color: var(--accent-light);
-  color: var(--accent-color);
+  background-color: #fef3c7 !important;
+  color: #d97706 !important;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -571,24 +548,24 @@ input:focus, select:focus {
 .calc-results-card h4 {
   font-size: 1.35rem;
   font-weight: 800;
-  color: var(--text-dark);
+  color: #26201a !important;
   margin-bottom: 0.2rem;
 }
 
 .summary-subtitle {
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: #786d63 !important;
   margin-bottom: 1.5rem;
 }
 
 .total-cost-box {
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-  color: #ffffff;
+  background: linear-gradient(135deg, #b85d38, #d97706) !important;
+  color: #ffffff !important;
   border-radius: var(--radius-md);
   padding: 1.8rem;
   text-align: center;
   margin-bottom: 1.8rem;
-  box-shadow: 0 8px 24px rgba(184, 93, 56, 0.25);
+  box-shadow: 0 8px 24px rgba(184, 93, 56, 0.25) !important;
 }
 
 .total-label {
@@ -624,8 +601,8 @@ input:focus, select:focus {
   justify-content: space-between;
   align-items: center;
   padding: 0.9rem 1.1rem;
-  background-color: #ffffff;
-  border: 1px solid var(--border-color);
+  background-color: #ffffff !important;
+  border: 1px solid #e8ded1 !important;
   border-radius: var(--radius-sm);
 }
 
@@ -642,31 +619,29 @@ input:focus, select:focus {
 .item-title-col strong {
   display: block;
   font-size: 0.92rem;
-  color: var(--text-dark);
+  color: #26201a !important;
 }
 
 .item-title-col small {
   font-size: 0.78rem;
-  color: var(--text-muted);
+  color: #786d63 !important;
 }
 
 .item-price {
   font-size: 1.05rem;
   font-weight: 800;
-  color: var(--text-dark);
+  color: #26201a !important;
 }
 
 .disclaimer-note {
   font-size: 0.78rem;
-  color: var(--text-muted);
+  color: #786d63 !important;
   line-height: 1.45;
-  border-top: 1px dashed var(--border-color);
+  border-top: 1px dashed #e8ded1 !important;
   padding-top: 1rem;
 }
 
-/* --------------------------------------------------------------------------
-   Travel Tips Section
-   -------------------------------------------------------------------------- */
+/* 6. Travel Tips Section */
 .tips-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -674,8 +649,8 @@ input:focus, select:focus {
 }
 
 .tip-card {
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-color);
+  background-color: #ffffff !important;
+  border: 1px solid #e8ded1 !important;
   border-radius: var(--radius-lg);
   padding: 2.2rem;
   box-shadow: var(--shadow-sm);
@@ -695,21 +670,19 @@ input:focus, select:focus {
 .tip-card h3 {
   font-size: 1.25rem;
   font-weight: 800;
-  color: var(--text-dark);
+  color: #26201a !important;
   margin-bottom: 0.6rem;
 }
 
 .tip-card p {
   font-size: 0.92rem;
-  color: var(--text-muted);
+  color: #786d63 !important;
 }
 
-/* --------------------------------------------------------------------------
-   Footer
-   -------------------------------------------------------------------------- */
+/* 7. Footer */
 .footer {
-  background-color: var(--text-dark);
-  color: #f8fafc;
+  background-color: #26201a !important;
+  color: #faf6f0 !important;
   padding: 4rem 0 2rem;
 }
 
@@ -726,13 +699,13 @@ input:focus, select:focus {
 }
 
 .footer-brand .brand-logo {
-  color: #ffffff;
+  color: #ffffff !important;
   margin-bottom: 0.8rem;
 }
 
 .footer-brand p {
   font-size: 0.92rem;
-  color: #94a3b8;
+  color: #a89c91 !important;
 }
 
 .footer-links-group {
@@ -748,7 +721,7 @@ input:focus, select:focus {
 
 .footer-col strong {
   font-size: 0.92rem;
-  color: #ffffff;
+  color: #ffffff !important;
   margin-bottom: 0.4rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -756,24 +729,22 @@ input:focus, select:focus {
 
 .footer-col a {
   font-size: 0.88rem;
-  color: #cbd5e1;
+  color: #d1c7bc !important;
 }
 
 .footer-col a:hover {
-  color: var(--accent-color);
+  color: #d97706 !important;
 }
 
 .footer-bottom {
-  border-top: 1px solid #1e293b;
+  border-top: 1px solid #3d342d !important;
   padding-top: 1.8rem;
   text-align: center;
   font-size: 0.82rem;
-  color: #64748b;
+  color: #8c8075 !important;
 }
 
-/* --------------------------------------------------------------------------
-   Mobile & Tablet Responsiveness
-   -------------------------------------------------------------------------- */
+/* 8. Mobile Responsiveness */
 @media (max-width: 992px) {
   .photo-gallery-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -806,11 +777,11 @@ input:focus, select:focus {
     top: 65px;
     left: 0;
     width: 100%;
-    background-color: var(--bg-surface);
+    background-color: #ffffff;
     flex-direction: column;
     padding: 2rem;
     gap: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid #e8ded1;
     box-shadow: var(--shadow-lg);
     transform: translateY(-150%);
     opacity: 0;

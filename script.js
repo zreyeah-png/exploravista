@@ -264,7 +264,7 @@ function switchDestination(destKey) {
   if (!destData) return;
 
   // Update Section Header Texts
-  document.getElementById("destHeaderTitle").textContent = `${destData.flag} ${destData.title}`;
+  document.getElementById("destHeaderTitle").textContent = `${destData.title}`;
   document.getElementById("destHeaderSub").textContent = destData.subtext;
 
   // Update Quick Stats Bar
@@ -373,7 +373,7 @@ function calculateTripCost() {
 
   // Update UI Elements
   document.getElementById("summaryTripTitle").textContent = 
-    `${destData.flag} Trip to ${destData.name} (${days} Days, ${travelers} Traveler${travelers > 1 ? 's' : ''})`;
+    `Trip to ${destData.name} (${days} Days, ${travelers} Traveler${travelers > 1 ? 's' : ''})`;
 
   document.getElementById("totalCostDisplay").textContent = formatMoney(grandTotalUSD);
   document.getElementById("perPersonDisplay").textContent = `~${formatMoney(perPersonUSD)} per traveler`;
