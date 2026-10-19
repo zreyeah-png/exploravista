@@ -1,4 +1,4 @@
-# ✈️ RoamReady — Interactive Travel Discovery & Trip Cost Estimator
+# ✈️ ExploraVista — Interactive Travel Discovery & Trip Cost Estimator
 
 > A beginner-friendly, highly interactive travel website that allows travelers to explore world-famous destinations and calculate accurate, realistic trip budget estimates based on departure country, duration, group size, and travel style.
 
@@ -6,11 +6,11 @@
 
 ## 🌟 1. Project Overview & The Idea
 
-### What is RoamReady?
-**RoamReady** is an interactive travel discovery and budgeting platform designed to solve one of the biggest friction points for travelers: *"How much will this trip actually cost from where I live, and what are the best spots to see?"*
+### What is ExploraVista?
+**ExploraVista** is an interactive travel discovery and budgeting platform designed to solve one of the biggest friction points for travelers: *"How much will this trip actually cost from where I live, and what are the best spots to see?"*
 
 ### Purpose
-Instead of generic travel blogs with vague advice, RoamReady combines **dynamic visual destination exploration** with a **smart budget estimation engine**. Users can explore top attractions in Italy, Japan, Switzerland, Thailand, or France, and instantly compute realistic costs (flights, accommodation, food, and activities) tailored to their departure origin.
+Instead of generic travel blogs with vague advice, ExploraVista combines **dynamic visual destination exploration** with a **smart budget estimation engine**. Users can explore top attractions in Italy, Japan, Switzerland, Thailand, or France, and instantly compute realistic costs (flights, accommodation, food, and activities) tailored to their departure origin.
 
 ### Target Audience
 - Vacation planners, solo backpackers, and families planning international holidays.
@@ -56,7 +56,7 @@ Instead of generic travel blogs with vague advice, RoamReady combines **dynamic 
 
 ## 🎨 4. How to Customize the Design (Colors & Emojis)
 
-RoamReady was built to be easily personalized:
+ExploraVista was built to be easily personalized:
 
 1. **Changing Theme Colors:**
    Open `style.css` and edit the `:root` variables at the top of the file:
@@ -84,8 +84,8 @@ Any standard web browser (Chrome, Edge, Firefox, Safari).
 ### Running Locally:
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/roam-ready.git
-   cd roam-ready
+   git clone https://github.com/YOUR_USERNAME/exploravista.git
+   cd exploravista
    ```
 2. **Open the website:**
    - Double click `index.html` to open it in your browser.
@@ -96,15 +96,15 @@ Any standard web browser (Chrome, Edge, Firefox, Safari).
 ## 🌐 6. Deployment (GitHub Pages)
 
 This project is deployed live using **GitHub Pages**:
-- **Live Demo Link:** [https://YOUR_USERNAME.github.io/roam-ready/](https://YOUR_USERNAME.github.io/roam-ready/)
-- **GitHub Repository:** [https://github.com/YOUR_USERNAME/roam-ready](https://github.com/YOUR_USERNAME/roam-ready)
+- **Live Demo Link:** [https://YOUR_USERNAME.github.io/exploravista/](https://YOUR_USERNAME.github.io/exploravista/)
+- **GitHub Repository:** [https://github.com/YOUR_USERNAME/exploravista](https://github.com/YOUR_USERNAME/exploravista)
 
 ---
 
 ## 📁 7. Project Structure
 
 ```
-roam-ready/
+exploravista/
 │
 ├── index.html          # Semantic HTML structure & content
 ├── style.css           # Responsive styling & customizable design tokens
